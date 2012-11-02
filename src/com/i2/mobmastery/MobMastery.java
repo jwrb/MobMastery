@@ -92,7 +92,7 @@ public class MobMastery extends JavaPlugin {
             pname = player.getName();
         }
         if (((player == null) || (player.hasPermission("mobdamage.reload")))
-                && (commandLabel.equalsIgnoreCase("mobdamage"))/*|| (commandLabel.equalsIgnoreCase("mda"))*/) {
+                && (commandLabel.equalsIgnoreCase("mobmastery"))/*|| (commandLabel.equalsIgnoreCase("mda"))*/) {
             if ((args.length == 0)) {
                 respond(player, ChatColor.RED + "[MobMastery] Version 1.1.1 " + ChatColor.BLUE + "by island219 & Blabba_Labba");
             }
