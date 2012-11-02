@@ -2,6 +2,8 @@ name: MobMastery
 main: com.i2.mobmastery.MobMastery
 version: 1.1.1
 description: Control Mobs Easily
+load: STARTUP
+loadbefore: [ExtraHardMode, MobArena]
 commands:
   mobmastery:
     description: ModMastery Command

@@ -21,7 +21,7 @@ public class MobMasteryListener implements Listener {
         this.plugin = plugin;
     }
 
-    @EventHandler
+    @EventHandler(priority = EventPriority.HIGH)
     public void onDamage(EntityDamageByEntityEvent e) {
         if (e.getDamager().getType().equals(EntityType.PIG)) {
             if (this.plugin.getConfig().getInt("MobMastery.Pig.Damage") != -1) {
