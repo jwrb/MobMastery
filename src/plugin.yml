@@ -1,11 +1,13 @@
 name: MobMastery
 main: com.i2.mobmastery.MobMastery
 version: 1.1.1
-description: Change Mob Health Easily.
+description: Control Mobs Easily
 commands:
   mobmastery:
     description: ModMastery Command
+    aliases: mm
+    usage: /<command> reload, /<command> sh MobName Amount
 permissions:
-    mobmastery.reload:
-      description: Reload MobDamage config file
-      default: false
+  mobmastery.reload:
+    description: Reload MobMastery config file
+    default: false
