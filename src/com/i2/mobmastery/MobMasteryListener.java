@@ -28,7 +28,7 @@ public class MobMasteryListener implements Listener {
                 e.setDamage(this.plugin.getConfig().getInt("MobMastery.Pig.Damage"));
             }
         }
-        if (e.getDamager().getType().equals(EntityType.PIG)) {
+        if (e.getDamager().getType().equals(EntityType.COW)) {
             if (this.plugin.getConfig().getInt("MobMastery.Cow.Damage") != -1) {
                 e.setDamage(this.plugin.getConfig().getInt("MobMastery.Cow.Damage"));
             }
