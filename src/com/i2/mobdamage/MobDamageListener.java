@@ -24,138 +24,138 @@ public class MobDamageListener implements Listener {
     @EventHandler
     public void onDamage(EntityDamageByEntityEvent e) {
         if (e.getDamager().getType().equals(EntityType.PIG)) {
-            if (this.plugin.getConfig().getInt("MobDamage.Pig") != -1) {
-                e.setDamage(this.plugin.getConfig().getInt("MobDamage.Pig"));
+            if (this.plugin.getConfig().getInt("MobMastery.Pig.Damage") != -1) {
+                e.setDamage(this.plugin.getConfig().getInt("MobMastery.Pig.Damage"));
             }
         }
         if (e.getDamager().getType().equals(EntityType.PIG)) {
-            if (this.plugin.getConfig().getInt("MobDamage.Cow") != -1) {
-                e.setDamage(this.plugin.getConfig().getInt("MobDamage.Cow"));
+            if (this.plugin.getConfig().getInt("MobMastery.Cow.Damage") != -1) {
+                e.setDamage(this.plugin.getConfig().getInt("MobMastery.Cow.Damage"));
             }
         }
         if (e.getDamager().getType().equals(EntityType.SPIDER)) {
-            if (this.plugin.getConfig().getInt("MobDamage.Spider") != -1) {
-                e.setDamage(this.plugin.getConfig().getInt("MobDamage.Spider"));
+            if (this.plugin.getConfig().getInt("MobMastery.Spider.Damage") != -1) {
+                e.setDamage(this.plugin.getConfig().getInt("MobMastery.Spider.Damage"));
             }
         }
         if (e.getDamager().getType().equals(EntityType.CAVE_SPIDER)) {
-            if (this.plugin.getConfig().getInt("MobDamage.CaveSpider") != -1) {
-                e.setDamage(this.plugin.getConfig().getInt("MobDamage.CaveSpider"));
+            if (this.plugin.getConfig().getInt("MobMastery.CaveSpider.Damage") != -1) {
+                e.setDamage(this.plugin.getConfig().getInt("MobMastery.CaveSpider.Damage"));
             }
         }
         if (e.getDamager().getType().equals(EntityType.ZOMBIE)) {
-            if (this.plugin.getConfig().getInt("MobDamage.Zombie") != -1) {
-                e.setDamage(this.plugin.getConfig().getInt("MobDamage.Zombie"));
+            if (this.plugin.getConfig().getInt("MobMastery.Zombie.Damage") != -1) {
+                e.setDamage(this.plugin.getConfig().getInt("MobMastery.Zombie.Damage"));
             }
         }
         if (e.getDamager().getType().equals(EntityType.ARROW)) {
             Arrow b = (Arrow) e.getDamager();
             if (b.getShooter().getType().equals(EntityType.SKELETON)) {
-                if (this.plugin.getConfig().getInt("MobDamage.Skeleton") != -1) {
-                    e.setDamage(this.plugin.getConfig().getInt("MobDamage.Skeleton"));
+                if (this.plugin.getConfig().getInt("MobMastery.Skeleton.Damage") != -1) {
+                    e.setDamage(this.plugin.getConfig().getInt("MobMastery.Skeleton.Damage"));
                 }
             }
         }
         if (e.getDamager().getType().equals(EntityType.CREEPER)) {
-            if (this.plugin.getConfig().getInt("MobDamage.Creeper") != -1) {
-                e.setDamage(this.plugin.getConfig().getInt("MobDamage.Creeper"));
+            if (this.plugin.getConfig().getInt("MobMastery.Creeper.Damage") != -1) {
+                e.setDamage(this.plugin.getConfig().getInt("MobMastery.Creeper.Damage"));
             }
         }
         if (e.getDamager().getType().equals(EntityType.OCELOT)) {
-            if (this.plugin.getConfig().getInt("MobDamage.Ocelot") != -1) {
-                e.setDamage(this.plugin.getConfig().getInt("MobDamage.Ocelot"));
+            if (this.plugin.getConfig().getInt("MobMastery.Ocelot.Damage") != -1) {
+                e.setDamage(this.plugin.getConfig().getInt("MobMastery.Ocelot.Damage"));
             }
         }
         if (e.getDamager().getType().equals(EntityType.BAT)) {
-            if (this.plugin.getConfig().getInt("MobDamage.Bat") != -1) {
-                e.setDamage(this.plugin.getConfig().getInt("MobDamage.Bat"));
+            if (this.plugin.getConfig().getInt("MobMastery.Bat.Damage") != -1) {
+                e.setDamage(this.plugin.getConfig().getInt("MobMastery.Bat.Damage"));
             }
         }
         if (e.getDamager().getType().equals(EntityType.CHICKEN)) {
-            if (this.plugin.getConfig().getInt("MobDamage.Chicken") != -1) {
-                e.setDamage(this.plugin.getConfig().getInt("MobDamage.Chicken"));
+            if (this.plugin.getConfig().getInt("MobMastery.Chicken.Damage") != -1) {
+                e.setDamage(this.plugin.getConfig().getInt("MobMastery.Chicken.Damage"));
             }
         }
         if (e.getDamager().getType().equals(EntityType.MUSHROOM_COW)) {
-            if (this.plugin.getConfig().getInt("MobDamage.Mooshroom") != -1) {
-                e.setDamage(this.plugin.getConfig().getInt("MobDamage.Mooshroom"));
+            if (this.plugin.getConfig().getInt("MobMastery.Mooshroom.Damage") != -1) {
+                e.setDamage(this.plugin.getConfig().getInt("MobMastery.Mooshroom.Damage"));
             }
         }
         if (e.getDamager().getType().equals(EntityType.SHEEP)) {
-            if (this.plugin.getConfig().getInt("MobDamage.Sheep") != -1) {
-                e.setDamage(this.plugin.getConfig().getInt("MobDamage.Sheep"));
+            if (this.plugin.getConfig().getInt("MobMastery.Sheep.Damage") != -1) {
+                e.setDamage(this.plugin.getConfig().getInt("MobMastery.Sheep.Damage"));
             }
         }
         if (e.getDamager().getType().equals(EntityType.SQUID)) {
-            if (this.plugin.getConfig().getInt("MobDamage.Squid") != -1) {
-                e.setDamage(this.plugin.getConfig().getInt("MobDamage.Squid"));
+            if (this.plugin.getConfig().getInt("MobMastery.Squid.Damage") != -1) {
+                e.setDamage(this.plugin.getConfig().getInt("MobMastery.Squid.Damage"));
             }
         }
         if (e.getDamager().getType().equals(EntityType.VILLAGER)) {
-            if (this.plugin.getConfig().getInt("MobDamage.Villager") != -1) {
-                e.setDamage(this.plugin.getConfig().getInt("MobDamage.Villager"));
+            if (this.plugin.getConfig().getInt("MobMastery.Villager.Damage") != -1) {
+                e.setDamage(this.plugin.getConfig().getInt("MobMastery.Villager.Damage"));
             }
         }
         if (e.getDamager().getType().equals(EntityType.ENDERMAN)) {
-            if (this.plugin.getConfig().getInt("MobDamage.Enderman") != -1) {
-                e.setDamage(this.plugin.getConfig().getInt("MobDamage.Enderman"));
+            if (this.plugin.getConfig().getInt("MobMastery.Enderman.Damage") != -1) {
+                e.setDamage(this.plugin.getConfig().getInt("MobMastery.Enderman.Damage"));
             }
         }
         if (e.getDamager().getType().equals(EntityType.WOLF)) {
-            if (this.plugin.getConfig().getInt("MobDamage.Wolf") != -1) {
-                e.setDamage(this.plugin.getConfig().getInt("MobDamage.Wolf"));
+            if (this.plugin.getConfig().getInt("MobMastery.Wolf.Damage") != -1) {
+                e.setDamage(this.plugin.getConfig().getInt("MobMastery.Wolf.Damage"));
             }
         }
         if (e.getDamager().getType().equals(EntityType.PIG_ZOMBIE)) {
-            if (this.plugin.getConfig().getInt("MobDamage.ZombiePigman") != -1) {
-                e.setDamage(this.plugin.getConfig().getInt("MobDamage.ZombiePigman"));
+            if (this.plugin.getConfig().getInt("MobMastery.ZombiePigman.Damage") != -1) {
+                e.setDamage(this.plugin.getConfig().getInt("MobMastery.ZombiePigman.Damage"));
             }
         }
         if (e.getDamager().getType().equals(EntityType.BLAZE)) {
-            if (this.plugin.getConfig().getInt("MobDamage.Blaze") != -1) {
-                e.setDamage(this.plugin.getConfig().getInt("MobDamage.Blaze"));
+            if (this.plugin.getConfig().getInt("MobMastery.Blaze.Damage") != -1) {
+                e.setDamage(this.plugin.getConfig().getInt("MobMastery.Blaze.Damage"));
             }
         }
         if (e.getDamager().getType().equals(EntityType.GHAST)) {
-            if (this.plugin.getConfig().getInt("MobDamage.Ghast") != -1) {
-                e.setDamage(this.plugin.getConfig().getInt("MobDamage.Ghast"));
+            if (this.plugin.getConfig().getInt("MobMastery.Ghast.Damage") != -1) {
+                e.setDamage(this.plugin.getConfig().getInt("MobMastery.Ghast.Damage"));
             }
         }
         if (e.getDamager().getType().equals(EntityType.MAGMA_CUBE)) {
-            if (this.plugin.getConfig().getInt("MobDamage.MagmaCube") != -1) {
-                e.setDamage(this.plugin.getConfig().getInt("MobDamage.MagmaCube"));
+            if (this.plugin.getConfig().getInt("MobMastery.MagmaCube.Damage") != -1) {
+                e.setDamage(this.plugin.getConfig().getInt("MobMastery.MagmaCube.Damage"));
             }
         }
         if (e.getDamager().getType().equals(EntityType.SILVERFISH)) {
-            if (this.plugin.getConfig().getInt("MobDamage.Silverfish") != -1) {
-                e.setDamage(this.plugin.getConfig().getInt("MobDamage.Silverfish"));
+            if (this.plugin.getConfig().getInt("MobMastery.Silverfish.Damage") != -1) {
+                e.setDamage(this.plugin.getConfig().getInt("MobMastery.Silverfish.Damage"));
             }
         }
         if (e.getDamager().getType().equals(EntityType.SLIME)) {
-            if (this.plugin.getConfig().getInt("MobDamage.Slime") != -1) {
-                e.setDamage(this.plugin.getConfig().getInt("MobDamage.Slime"));
+            if (this.plugin.getConfig().getInt("MobMastery.Slime.Damage") != -1) {
+                e.setDamage(this.plugin.getConfig().getInt("MobMastery.Slime.Damage"));
             }
         }
         if (e.getDamager().getType().equals(EntityType.WITCH)) {
-            if (this.plugin.getConfig().getInt("MobDamage.Witch") != -1) {
-                e.setDamage(this.plugin.getConfig().getInt("MobDamage.Witch"));
+            if (this.plugin.getConfig().getInt("MobMastery.Witch.Damage") != -1) {
+                e.setDamage(this.plugin.getConfig().getInt("MobMastery.Witch.Damage"));
             }
         }
         if (e.getDamager().getType().equals(EntityType.WITHER_SKULL)) {
-            if (this.plugin.getConfig().getInt("MobDamage.WitherSkeleton") != -1) {
-                e.setDamage(this.plugin.getConfig().getInt("MobDamage.WitherSkeleton"));
+            if (this.plugin.getConfig().getInt("MobMastery.WitherSkeleton.Damage") != -1) {
+                e.setDamage(this.plugin.getConfig().getInt("MobMastery.WitherSkeleton.Damage"));
             }
         }
         if (e.getDamager().getType().equals(EntityType.IRON_GOLEM)) {
-            if (this.plugin.getConfig().getInt("MobDamage.IronGolem") != -1) {
-                e.setDamage(this.plugin.getConfig().getInt("MobDamage.IronGolem"));
+            if (this.plugin.getConfig().getInt("MobMastery.IronGolem.Damage") != -1) {
+                e.setDamage(this.plugin.getConfig().getInt("MobMastery.IronGolem.Damage"));
             }
         }
         if (e.getDamager().getType().equals(EntityType.SNOWBALL)) {
             Snowball b = (Snowball) e.getDamager();
             if (b.getShooter().getType().equals(EntityType.SNOWMAN)) {
-                if (this.plugin.getConfig().getInt("MobDamage.SnowGolem") != -1) {
-                    e.setDamage(this.plugin.getConfig().getInt("MobDamage.SnowGolem"));
+                if (this.plugin.getConfig().getInt("MobMastery.SnowGolem.Damage") != -1) {
+                    e.setDamage(this.plugin.getConfig().getInt("MobMastery.SnowGolem.Damage"));
                 }
             }
         }
@@ -165,159 +165,159 @@ public class MobDamageListener implements Listener {
 
         if (!mobHealth.containsKey(e.getEntity().getEntityId())) {
             if (e.getEntityType().equals(EntityType.COW)) {
-                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobHealth.Cow") != -1) {
-                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobHealth.Cow"));
+                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobMastery.Cow.Health") != -1) {
+                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobMastery.Cow.Health"));
 
                 }
             }
 
             if (e.getEntityType().equals(EntityType.PIG)) {
-                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobHealth.Pig") != -1) {
-                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobHealth.Pig"));
+                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobMastery.Pig.Health") != -1) {
+                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobMastery.Pig.Health"));
                 }
             }
 
             if (e.getEntityType().equals(EntityType.SPIDER)) {
-                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobHealth.Spider") != -1) {
-                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobHealth.Spider"));
+                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobMastery.Spider.Health") != -1) {
+                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobMastery.Spider.Health"));
 
                 }
             }
             if (e.getEntityType().equals(EntityType.CAVE_SPIDER)) {
-                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobHealth.CaveSpider") != -1) {
-                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobHealth.CaveSpider"));
+                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobMastery.CaveSpider.Health") != -1) {
+                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobMastery.CaveSpider.Health"));
 
                 }
             }
             if (e.getEntityType().equals(EntityType.ZOMBIE)) {
-                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobHealth.Zombie") != -1) {
-                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobHealth.Zombie"));
+                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobMastery.Zombie.Health") != -1) {
+                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobMastery.Zombie.Health"));
 
                 }
             }
             if (e.getEntityType().equals(EntityType.SKELETON)) {
-                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobHealth.Skeleton") != -1) {
-                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobHealth.Skeleton"));
+                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobMastery.Skeleton.Health") != -1) {
+                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobMastery.Skeleton.Health"));
 
                 }
             }
             if (e.getEntityType().equals(EntityType.CREEPER)) {
-                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobHealth.Creeper") != -1) {
-                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobHealth.Creeper"));
+                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobMastery.Creeper.Health") != -1) {
+                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobMastery.Creeper.Health"));
 
                 }
             }
             if (e.getEntityType().equals(EntityType.OCELOT)) {
-                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobHealth.Ocelot") != -1) {
-                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobHealth.Ocelot"));
+                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobMastery.Ocelot.Health") != -1) {
+                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobMastery.Ocelot.Health"));
 
                 }
             }
             if (e.getEntityType().equals(EntityType.BAT)) {
-                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobHealth.Bat") != -1) {
-                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobHealth.Bat"));
+                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobMastery.Bat.Health") != -1) {
+                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobMastery.Bat.Health"));
 
                 }
             }
             if (e.getEntityType().equals(EntityType.CHICKEN)) {
-                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobHealth.Chicken") != -1) {
-                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobHealth.Chicken"));
+                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobMastery.Chicken.Health") != -1) {
+                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobMastery.Chicken.Health"));
 
                 }
             }
             if (e.getEntityType().equals(EntityType.MUSHROOM_COW)) {
-                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobHealth.Mooshroom") != -1) {
-                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobHealth.Mooshroom"));
+                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobMastery.Mooshroom.Health") != -1) {
+                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobMastery.Mooshroom.Health"));
 
                 }
             }
             if (e.getEntityType().equals(EntityType.SHEEP)) {
-                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobHealth.Sheep") != -1) {
-                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobHealth.Sheep"));
+                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobMastery.Sheep.Health") != -1) {
+                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobMastery.Sheep.Health"));
 
                 }
             }
             if (e.getEntityType().equals(EntityType.SQUID)) {
-                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobHealth.Squid") != -1) {
-                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobHealth.Squid"));
+                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobMastery.Squid.Health") != -1) {
+                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobMastery.Squid.Health"));
 
                 }
             }
             if (e.getEntityType().equals(EntityType.VILLAGER)) {
-                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobHealth.Villager") != -1) {
-                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobHealth.Villager"));
+                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobMastery.Villager.Health") != -1) {
+                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobMastery.Villager.Health"));
 
                 }
             }
             if (e.getEntityType().equals(EntityType.ENDERMAN)) {
-                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobHealth.Enderman") != -1) {
-                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobHealth.Enderman"));
+                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobMastery.Enderman.Health") != -1) {
+                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobMastery.Enderman.Health"));
 
                 }
             }
             if (e.getEntityType().equals(EntityType.WOLF)) {
-                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobHealth.Wolf") != -1) {
-                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobHealth.Wolf"));
+                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobMastery.Wolf.Health") != -1) {
+                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobMastery.Wolf.Health"));
 
                 }
             }
             if (e.getEntityType().equals(EntityType.PIG_ZOMBIE)) {
-                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobHealth.ZombiePigman") != -1) {
-                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobHealth.ZombiePigman"));
+                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobMastery.ZombiePigman.Health") != -1) {
+                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobMastery.ZombiePigman.Health"));
 
                 }
             }
             if (e.getEntityType().equals(EntityType.BLAZE)) {
-                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobHealth.Blaze") != -1) {
-                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobHealth.Blaze"));
+                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobMastery.Blaze.Health") != -1) {
+                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobMastery.Blaze.Health"));
 
                 }
             }
             if (e.getEntityType().equals(EntityType.GHAST)) {
-                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobHealth.Ghast") != -1) {
-                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobHealth.Ghast"));
+                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobMastery.Ghast.Health") != -1) {
+                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobMastery.Ghast.Health"));
 
                 }
             }
             if (e.getEntityType().equals(EntityType.MAGMA_CUBE)) {
-                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobHealth.MagmaCube") != -1) {
-                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobHealth.MagmaCube"));
+                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobMastery.MagmaCube.Health") != -1) {
+                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobMastery.MagmaCube.Health"));
 
                 }
             }
             if (e.getEntityType().equals(EntityType.SILVERFISH)) {
-                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobHealth.Silverfish") != -1) {
-                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobHealth.Silverfish"));
+                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobMastery.Silverfish.Health") != -1) {
+                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobMastery.Silverfish.Health"));
 
                 }
             }
             if (e.getEntityType().equals(EntityType.SLIME)) {
-                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobHealth.Slime") != -1) {
-                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobHealth.Slime"));
+                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobMastery.Slime.Health") != -1) {
+                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobMastery.Slime.Health"));
 
                 }
             }
             if (e.getEntityType().equals(EntityType.WITCH)) {
-                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobHealth.Witch") != -1) {
-                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobHealth.Witch"));
+                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobMastery.Witch.Health") != -1) {
+                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobMastery.Witch.Health"));
 
                 }
             }
             if (e.getEntityType().equals(EntityType.WITHER_SKULL)) {
-                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobHealth.WitherSkeleton") != -1) {
-                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobHealth.WitherSkeleton"));
+                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobMastery.WitherSkeleton.Health") != -1) {
+                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobMastery.WitherSkeleton.Health"));
 
                 }
             }
             if (e.getEntityType().equals(EntityType.IRON_GOLEM)) {
-                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobHealth.IronGolem") != -1) {
-                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobHealth.IronGolem"));
+                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobMastery.IronGolem.Health") != -1) {
+                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobMastery.IronGolem.Health"));
 
                 }
             }
             if (e.getEntityType().equals(EntityType.SNOWMAN)) {
-                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobHealth.SnowGolem") != -1) {
-                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobHealth.SnowGolem"));
+                if (!e.isCancelled() && this.plugin.getConfig().getInt("MobMastery.SnowGolem.Health") != -1) {
+                    mobHealth.put(e.getEntity().getEntityId(), this.plugin.getConfig().getInt("MobMastery.SnowGolem.Health"));
                 }
             }
         }
@@ -330,31 +330,31 @@ public class MobDamageListener implements Listener {
 
 
 
-        if (((e.getEntityType().equals(EntityType.PIG)) && this.plugin.getConfig().getInt("MobHealth.Pig") != -1)
-                || ((e.getEntityType().equals(EntityType.COW)) && this.plugin.getConfig().getInt("MobHealth.Cow") != -1)
-                || ((e.getEntityType().equals(EntityType.SPIDER)) && this.plugin.getConfig().getInt("MobHealth.Spider") != -1)
-                || ((e.getEntityType().equals(EntityType.CAVE_SPIDER)) && this.plugin.getConfig().getInt("MobHealth.Cavepider") != -1)
-                || ((e.getEntityType().equals(EntityType.ZOMBIE)) && this.plugin.getConfig().getInt("MobHealth.Zombie") != -1)
-                || ((e.getEntityType().equals(EntityType.SKELETON)) && this.plugin.getConfig().getInt("MobHealth.Skeleton") != -1)
-                || ((e.getEntityType().equals(EntityType.CREEPER)) && this.plugin.getConfig().getInt("MobHealth.Creeper") != -1)
-                || ((e.getEntityType().equals(EntityType.OCELOT)) && this.plugin.getConfig().getInt("MobHealth.Ocelot") != -1)
-                || ((e.getEntityType().equals(EntityType.BAT)) && this.plugin.getConfig().getInt("MobHealth.Bat") != -1)
-                || ((e.getEntityType().equals(EntityType.CHICKEN)) && this.plugin.getConfig().getInt("MobHealth.Chicken") != -1)
-                || ((e.getEntityType().equals(EntityType.MUSHROOM_COW)) && this.plugin.getConfig().getInt("MobHealth.Mooshroom") != -1)
-                || ((e.getEntityType().equals(EntityType.SHEEP)) && this.plugin.getConfig().getInt("MobHealth.Sheep") != -1)
-                || ((e.getEntityType().equals(EntityType.SQUID)) && this.plugin.getConfig().getInt("MobHealth.Squid") != -1)
-                || ((e.getEntityType().equals(EntityType.VILLAGER)) && this.plugin.getConfig().getInt("MobHealth.Villager") != -1)
-                || ((e.getEntityType().equals(EntityType.ENDERMAN)) && this.plugin.getConfig().getInt("MobHealth.Enderman") != -1)
-                || ((e.getEntityType().equals(EntityType.WOLF)) && this.plugin.getConfig().getInt("MobHealth.Wolf") != -1)
-                || ((e.getEntityType().equals(EntityType.PIG_ZOMBIE)) && this.plugin.getConfig().getInt("MobHealth.ZombiePigman") != -1)
-                || ((e.getEntityType().equals(EntityType.BLAZE)) && this.plugin.getConfig().getInt("MobHealth.Blaze") != -1)
-                || ((e.getEntityType().equals(EntityType.GHAST)) && this.plugin.getConfig().getInt("MobHealth.Ghast") != -1)
-                || ((e.getEntityType().equals(EntityType.MAGMA_CUBE)) && this.plugin.getConfig().getInt("MobHealth.MagmaCube") != -1)
-                || ((e.getEntityType().equals(EntityType.SILVERFISH)) && this.plugin.getConfig().getInt("MobHealth.Silverfish") != -1)
-                || ((e.getEntityType().equals(EntityType.SLIME)) && this.plugin.getConfig().getInt("MobHealth.Slime") != -1)
-                || ((e.getEntityType().equals(EntityType.WITCH)) && this.plugin.getConfig().getInt("MobHealth.Witch") != -1)
-                || ((e.getEntityType().equals(EntityType.WITHER_SKULL)) && this.plugin.getConfig().getInt("MobHealth.WitherSkeleton") != -1)
-                || ((e.getEntityType().equals(EntityType.IRON_GOLEM)) && this.plugin.getConfig().getInt("MobHealth.IronGolem") != -1)) {
+        if (((e.getEntityType().equals(EntityType.PIG)) && this.plugin.getConfig().getInt("MobMastery.Pig.Health") != -1)
+                || ((e.getEntityType().equals(EntityType.COW)) && this.plugin.getConfig().getInt("MobMastery.Cow.Health") != -1)
+                || ((e.getEntityType().equals(EntityType.SPIDER)) && this.plugin.getConfig().getInt("MobMastery.Spider.Health") != -1)
+                || ((e.getEntityType().equals(EntityType.CAVE_SPIDER)) && this.plugin.getConfig().getInt("MobMastery.Cavepider.Health") != -1)
+                || ((e.getEntityType().equals(EntityType.ZOMBIE)) && this.plugin.getConfig().getInt("MobMastery.Zombie.Health") != -1)
+                || ((e.getEntityType().equals(EntityType.SKELETON)) && this.plugin.getConfig().getInt("MobMastery.Skeleton.Health") != -1)
+                || ((e.getEntityType().equals(EntityType.CREEPER)) && this.plugin.getConfig().getInt("MobMastery.Creeper.Health") != -1)
+                || ((e.getEntityType().equals(EntityType.OCELOT)) && this.plugin.getConfig().getInt("MobMastery.Ocelot.Health") != -1)
+                || ((e.getEntityType().equals(EntityType.BAT)) && this.plugin.getConfig().getInt("MobMastery.Bat.Health") != -1)
+                || ((e.getEntityType().equals(EntityType.CHICKEN)) && this.plugin.getConfig().getInt("MobMastery.Chicken.Health") != -1)
+                || ((e.getEntityType().equals(EntityType.MUSHROOM_COW)) && this.plugin.getConfig().getInt("MobMastery.Mooshroom.Health") != -1)
+                || ((e.getEntityType().equals(EntityType.SHEEP)) && this.plugin.getConfig().getInt("MobMastery.Sheep.Health") != -1)
+                || ((e.getEntityType().equals(EntityType.SQUID)) && this.plugin.getConfig().getInt("MobMastery.Squid.Health") != -1)
+                || ((e.getEntityType().equals(EntityType.VILLAGER)) && this.plugin.getConfig().getInt("MobMastery.Villager.Health") != -1)
+                || ((e.getEntityType().equals(EntityType.ENDERMAN)) && this.plugin.getConfig().getInt("MobMastery.Enderman.Health") != -1)
+                || ((e.getEntityType().equals(EntityType.WOLF)) && this.plugin.getConfig().getInt("MobMastery.Wolf.Health") != -1)
+                || ((e.getEntityType().equals(EntityType.PIG_ZOMBIE)) && this.plugin.getConfig().getInt("MobMastery.ZombiePigman.Health") != -1)
+                || ((e.getEntityType().equals(EntityType.BLAZE)) && this.plugin.getConfig().getInt("MobMastery.Blaze.Health") != -1)
+                || ((e.getEntityType().equals(EntityType.GHAST)) && this.plugin.getConfig().getInt("MobMastery.Ghast.Health") != -1)
+                || ((e.getEntityType().equals(EntityType.MAGMA_CUBE)) && this.plugin.getConfig().getInt("MobMastery.MagmaCube.Health") != -1)
+                || ((e.getEntityType().equals(EntityType.SILVERFISH)) && this.plugin.getConfig().getInt("MobMastery.Silverfish.Health") != -1)
+                || ((e.getEntityType().equals(EntityType.SLIME)) && this.plugin.getConfig().getInt("MobMastery.Slime.Health") != -1)
+                || ((e.getEntityType().equals(EntityType.WITCH)) && this.plugin.getConfig().getInt("MobMastery.Witch.Health") != -1)
+                || ((e.getEntityType().equals(EntityType.WITHER_SKULL)) && this.plugin.getConfig().getInt("MobMastery.WitherSkeleton.Health") != -1)
+                || ((e.getEntityType().equals(EntityType.IRON_GOLEM)) && this.plugin.getConfig().getInt("MobMastery.IronGolem.Health") != -1)) {
             int q = mobHealth.get(e.getEntity().getEntityId());
 
             if (q - e.getDamage() > 0) {
