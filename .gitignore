@@ -18,3 +18,6 @@ build/classes/com/i2/mobdamage/MobDamageListener.class
 build/classes/com/i2/mobdamage/MobDamage.class
 
 build/built-jar.properties
+
+.DS_Store
+/nbproject/private/
