@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 import java.io.PrintStream;
+import java.util.logging.Level;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -57,62 +58,24 @@ public class MobDamage extends JavaPlugin {
         getServer().getPluginManager().disablePlugin(this);
     }
 
-    private void loadConfig() {
-        getConfig().addDefault("MobHealth.Pig", Integer.valueOf(-1));
-        getConfig().addDefault("MobHealth.Cow", Integer.valueOf(-1));
-        getConfig().addDefault("MobHealth.Spider", Integer.valueOf(-1));
-        getConfig().addDefault("MobHealth.CaveSpider", Integer.valueOf(-1));
-        getConfig().addDefault("MobHealth.Zombie", Integer.valueOf(-1));
-        getConfig().addDefault("MobHealth.Skeleton", Integer.valueOf(-1));
-        getConfig().addDefault("MobHealth.Creeper", Integer.valueOf(-1));
-        getConfig().addDefault("MobHealth.Ocelot", Integer.valueOf(-1));
-        getConfig().addDefault("MobHealth.Bat", Integer.valueOf(-1));
-        getConfig().addDefault("MobHealth.Chicken", Integer.valueOf(-1));
-        getConfig().addDefault("MobHealth.Mooshroom", Integer.valueOf(-1));
-        getConfig().addDefault("MobHealth.Sheep", Integer.valueOf(-1));
-        getConfig().addDefault("MobHealth.Squid", Integer.valueOf(-1));
-        getConfig().addDefault("MobHealth.Villager", Integer.valueOf(-1));
-        getConfig().addDefault("MobHealth.Enderman", Integer.valueOf(-1));
-        getConfig().addDefault("MobHealth.Wolf", Integer.valueOf(-1));
-        getConfig().addDefault("MobHealth.ZombiePigman", Integer.valueOf(-1));
-        getConfig().addDefault("MobHealth.Blaze", Integer.valueOf(-1));
-        getConfig().addDefault("MobHealth.Ghast", Integer.valueOf(-1));
-        getConfig().addDefault("MobHealth.MagmaCube", Integer.valueOf(-1));
-        getConfig().addDefault("MobHealth.Silverfish", Integer.valueOf(-1));
-        getConfig().addDefault("MobHealth.Slime", Integer.valueOf(-1));
-        getConfig().addDefault("MobHealth.Witch", Integer.valueOf(-1));
-        getConfig().addDefault("MobHealth.WitherSkeleton", Integer.valueOf(-1));
-        getConfig().addDefault("MobHealth.ZombieVillager", Integer.valueOf(-1));
-        getConfig().addDefault("MobHealth.IronGolem", Integer.valueOf(-1));
-        getConfig().addDefault("MobHealth.SnowGolem", Integer.valueOf(-1));
-        
-        getConfig().addDefault("MobDamage.Pig", Integer.valueOf(-1));
-        getConfig().addDefault("MobDamage.Cow", Integer.valueOf(-1));
-        getConfig().addDefault("MobDamage.Spider", Integer.valueOf(-1));
-        getConfig().addDefault("MobDamage.CaveSpider", Integer.valueOf(-1));
-        getConfig().addDefault("MobDamage.Zombie", Integer.valueOf(-1));
-        getConfig().addDefault("MobDamage.Skeleton", Integer.valueOf(-1));
-        getConfig().addDefault("MobDamage.Creeper", Integer.valueOf(-1));
-        getConfig().addDefault("MobDamage.Ocelot", Integer.valueOf(-1));
-        getConfig().addDefault("MobDamage.Bat", Integer.valueOf(-1));
-        getConfig().addDefault("MobDamage.Chicken", Integer.valueOf(-1));
-        getConfig().addDefault("MobDamage.Mooshroom", Integer.valueOf(-1));
-        getConfig().addDefault("MobDamage.Sheep", Integer.valueOf(-1));
-        getConfig().addDefault("MobDamage.Squid", Integer.valueOf(-1));
-        getConfig().addDefault("MobDamage.Villager", Integer.valueOf(-1));
-        getConfig().addDefault("MobDamage.Enderman", Integer.valueOf(-1));
-        getConfig().addDefault("MobDamage.Wolf", Integer.valueOf(-1));
-        getConfig().addDefault("MobDamage.ZombiePigman", Integer.valueOf(-1));
-        getConfig().addDefault("MobDamage.Blaze", Integer.valueOf(-1));
-        getConfig().addDefault("MobDamage.Ghast", Integer.valueOf(-1));
-        getConfig().addDefault("MobDamage.MagmaCube", Integer.valueOf(-1));
-        getConfig().addDefault("MobDamage.Silverfish", Integer.valueOf(-1));
-        getConfig().addDefault("MobDamage.Slime", Integer.valueOf(-1));
-        getConfig().addDefault("MobDamage.Witch", Integer.valueOf(-1));
-        getConfig().addDefault("MobDamage.WitherSkeleton", Integer.valueOf(-1));
-        getConfig().addDefault("MobDamage.ZombieVillager", Integer.valueOf(-1));
-        getConfig().addDefault("MobDamage.IronGolem", Integer.valueOf(-1));
-        getConfig().addDefault("MobDamage.SnowGolem", Integer.valueOf(-1));
+        private void loadConfig() {
+    	
+    	getConfig().addDefault("CentrePoint.X", Integer.valueOf(0));
+    	getConfig().addDefault("CentrePoint.Y", Integer.valueOf(0));
+    	
+    	String[] mobs = {"Pig","Cow","Spider","CaveSpider","Zombie","Skeleton",
+    			"Creeper","Ocelot","Bat","Chicken","Bat","Chicken","Mooshroom",
+    			"Sheep","Squid","Villager","Enderman","Wolf","ZombiePigman","Blaze","Ghast",
+    			"MagmaCube","Silverfish","Slime","Witch","WitherSkeleton","ZombieVillager","IronGolem","SnowGolem"};
+    	for(String mob:mobs) {
+    		getConfig().addDefault("MobMastery." + mob + ".Damage", Integer.valueOf(-1));
+    		getConfig().addDefault("MobMastery." + mob + ".Health", Integer.valueOf(-1));
+    		getConfig().addDefault("MobMastery." + mob + ".Speed", Integer.valueOf(-1));
+    		getConfig().addDefault("MobMastery." + mob + ".Variance", Integer.valueOf(0));
+    		getConfig().addDefault("MobMastery." + mob + ".ProgressiveDifficulty.Health.Rate", Integer.valueOf(0));
+    		getConfig().addDefault("MobMastery." + mob + ".ProgressiveDifficulty.Damage.Rate", Integer.valueOf(0));
+    		getConfig().addDefault("MobMastery." + mob + ".ProgressiveDifficulty.Speed.Rate", Integer.valueOf(0));
+    	}
         getConfig().options().copyDefaults(true);
         saveConfig();
     }
@@ -125,24 +88,56 @@ public class MobDamage extends JavaPlugin {
             pname = player.getName();
         }
         if (((player == null) || (player.hasPermission("mobdamage.reload")))
-                && (commandLabel.equalsIgnoreCase("mobdamage"))) {
+                && (commandLabel.equalsIgnoreCase("mobdamage"))/*|| (commandLabel.equalsIgnoreCase("mda"))*/) {
             if ((args.length == 0)) {
-                        respond(player, ChatColor.RED + "[MobDamage] Version 1.1 " + ChatColor.BLUE + "by island219 & Blabba_Labba");
-                    }
+                respond(player, ChatColor.RED + "[MobMastery] Version 1.1 " + ChatColor.BLUE + "by island219 & Blabba_Labba");
+            }
             if ((args.length == 1)
                     && (args[0].equalsIgnoreCase("reload"))) {
                 reloadConfig();
-                respond(player, ChatColor.RED + "[MobDamage] Config reloaded.");
-                this.logger.info("[MobDamage] " + pname + " reloaded the config.");
+                respond(player, ChatColor.RED + "[MobMastery] Config reloaded.");
+                this.logger.log(Level.INFO, "[MobMastery] {0} reloaded the config.", pname);
             }
-
+            if ((args.length == 3)
+                    && (args[0].equalsIgnoreCase("sh"))/*|| (args[0].equalsIgnoreCase("sethealth"))*/) {
+                    if (args.length < 3) {
+                        respond(player, ChatColor.RED + "[MobMastery] Please provide a Mob and value");
+                    }
+                    if (this.getConfig().contains("MobMastery." + args[1] + ".Health")) {
+                                this.getConfig().set("MobMastery." + args[1] + ".Health", Integer.valueOf(args[2]));
+                                respond(player, ChatColor.RED + "[MobDamage] Damage value set.");
+                                saveConfig();
+                                reloadConfig();
+                    }
+                    else {
+                        respond(player, ChatColor.RED + "[MobMastery] Incorrect Mob Name, Please consult config file.");
+                    }  
+            }
+            if ((args.length == 3)
+                    && (args[0].equalsIgnoreCase("sd"))/*|| (args[0].equalsIgnoreCase("sethealth"))*/) {
+                    if (args.length < 3) {
+                        respond(player, ChatColor.RED + "[MobMastery] Please provide a Mob and value");
+                    }
+                    if (this.getConfig().contains("MobMastery." + args[1] + ".Damage")) {
+                                this.getConfig().set("MobMastery." + args[1] + ".Damage", Integer.valueOf(args[2]));
+                                respond(player, ChatColor.RED + "[MobDamage] Damage value set.");
+                                saveConfig();
+                                reloadConfig();
+                        if (args.length < 3) {
+                        respond(player, ChatColor.RED + "[MobMastery] Please provide a Mob and value");
+                        }
+                    }
+                    else {
+                        respond(player, ChatColor.RED + "[MobMastery] Incorrect Mob Name, Please consult config file.");
+                    }    
+            }
             return true;
         }
 
         player.sendMessage(ChatColor.RED + "[MobDamage] Permission denied.");
         return false;
     }
-    
+
     private void respond(Player player, String message) {
         if (player == null) {
             System.out.println(message);
