@@ -1,4 +1,4 @@
-package com.i2.mobdamage;
+package com.i2.mobmastery;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,12 +12,12 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 
-public class MobDamageListener implements Listener {
+public class MobMasteryListener implements Listener {
 
     Map<Integer, Integer> mobHealth = new HashMap<Integer, Integer>();
-    public MobDamage plugin;
+    public MobMastery plugin;
 
-    public MobDamageListener(MobDamage plugin) {
+    public MobMasteryListener(MobMastery plugin) {
         this.plugin = plugin;
     }
 

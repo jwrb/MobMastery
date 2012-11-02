@@ -1,4 +1,4 @@
-package com.i2.mobdamage;
+package com.i2.mobmastery;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,15 +20,15 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import ru.tehkode.permissions.bukkit.PermissionsEx;
 
-public class MobDamage extends JavaPlugin {
+public class MobMastery extends JavaPlugin {
 
-    MobDamageListener mobListener = new MobDamageListener(this);
+    MobMasteryListener mobListener = new MobMasteryListener(this);
     public final Logger logger = Logger.getLogger("Minecraft");
-    public static MobDamage plugin;
+    public static MobMastery plugin;
 
     public void onDisable() {
         PluginDescriptionFile pdfile = this.getDescription();
-        this.logger.info("MobDamage has been disabled");
+        this.logger.info("MobMastery has been disabled");
     }
 
     public void onEnable() {
@@ -37,7 +37,7 @@ public class MobDamage extends JavaPlugin {
         pm.registerEvents(this.mobListener, this);
         loadConfig();
         setupPermissions();
-        this.logger.info("MobDamage has been enabled");
+        this.logger.info("MobMastery has been enabled");
     }
 
     private void setupPermissions() {
@@ -46,39 +46,43 @@ public class MobDamage extends JavaPlugin {
         PluginDescriptionFile pdfFile = getDescription();
 
         if (PEX != null) {
-            this.logger.info("[MobDamage] Found " + ((PermissionsEx) PEX).getDescription().getName() + " Version " + PEX.getDescription().getVersion());
+            this.logger.info("[MobMastery] Found " + ((PermissionsEx) PEX).getDescription().getName() + " Version " + PEX.getDescription().getVersion());
             this.logger.info("[" + pdfFile.getName() + "]" + " version " + pdfFile.getVersion() + " is enabled!");
             return;
         }
         if (PermissionsBukkit != null) {
-            this.logger.info("[MobDamage] Found PermissionsBukkit Version " + PermissionsBukkit.getDescription().getVersion());
+            this.logger.info("[MobMastery] Found PermissionsBukkit Version " + PermissionsBukkit.getDescription().getVersion());
             this.logger.info("[" + pdfFile.getName() + "]" + " version " + pdfFile.getVersion() + " is enabled!");
             return;
         }
         getServer().getPluginManager().disablePlugin(this);
     }
 
-        private void loadConfig() {
-    	
-    	getConfig().addDefault("CentrePoint.X", Integer.valueOf(0));
-    	getConfig().addDefault("CentrePoint.Y", Integer.valueOf(0));
-    	
-    	String[] mobs = {"Pig","Cow","Spider","CaveSpider","Zombie","Skeleton",
-    			"Creeper","Ocelot","Bat","Chicken","Bat","Chicken","Mooshroom",
-    			"Sheep","Squid","Villager","Enderman","Wolf","ZombiePigman","Blaze","Ghast",
-    			"MagmaCube","Silverfish","Slime","Witch","WitherSkeleton","ZombieVillager","IronGolem","SnowGolem"};
-    	for(String mob:mobs) {
+    private void loadConfig() {
+
+        getConfig().addDefault("CentrePoint.X", Integer.valueOf(0));
+        getConfig().addDefault("CentrePoint.Y", Integer.valueOf(0));
+
+        String[] mobs = {"Pig", "Cow", "Spider", "CaveSpider", "Zombie", "Skeleton",
+            "Creeper", "Ocelot", "Bat", "Chicken", "Bat", "Chicken", "Mooshroom",
+            "Sheep", "Squid", "Villager", "Enderman", "Wolf", "ZombiePigman", "Blaze", "Ghast",
+            "MagmaCube","Silverfish","Slime","Witch","WitherSkeleton","ZombieVillager","IronGolem","SnowGolem"};
+    	for(String mob:mobs
+
+    
+        ) {
     		getConfig().addDefault("MobMastery." + mob + ".Damage", Integer.valueOf(-1));
-    		getConfig().addDefault("MobMastery." + mob + ".Health", Integer.valueOf(-1));
-    		getConfig().addDefault("MobMastery." + mob + ".Speed", Integer.valueOf(-1));
-    		getConfig().addDefault("MobMastery." + mob + ".Variance", Integer.valueOf(0));
-    		getConfig().addDefault("MobMastery." + mob + ".ProgressiveDifficulty.Health.Rate", Integer.valueOf(0));
-    		getConfig().addDefault("MobMastery." + mob + ".ProgressiveDifficulty.Damage.Rate", Integer.valueOf(0));
-    		getConfig().addDefault("MobMastery." + mob + ".ProgressiveDifficulty.Speed.Rate", Integer.valueOf(0));
-    	}
-        getConfig().options().copyDefaults(true);
-        saveConfig();
+        getConfig().addDefault("MobMastery." + mob + ".Health", Integer.valueOf(-1));
+        getConfig().addDefault("MobMastery." + mob + ".Speed", Integer.valueOf(-1));
+        getConfig().addDefault("MobMastery." + mob + ".Variance", Integer.valueOf(0));
+        getConfig().addDefault("MobMastery." + mob + ".ProgressiveDifficulty.Health.Rate", Integer.valueOf(0));
+        getConfig().addDefault("MobMastery." + mob + ".ProgressiveDifficulty.Damage.Rate", Integer.valueOf(0));
+        getConfig().addDefault("MobMastery." + mob + ".ProgressiveDifficulty.Speed.Rate", Integer.valueOf(0));
     }
+
+    getConfig().options().copyDefaults(true);
+        saveConfig();
+}
 
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         Player player = null;
@@ -90,7 +94,7 @@ public class MobDamage extends JavaPlugin {
         if (((player == null) || (player.hasPermission("mobdamage.reload")))
                 && (commandLabel.equalsIgnoreCase("mobdamage"))/*|| (commandLabel.equalsIgnoreCase("mda"))*/) {
             if ((args.length == 0)) {
-                respond(player, ChatColor.RED + "[MobMastery] Version 1.1 " + ChatColor.BLUE + "by island219 & Blabba_Labba");
+                respond(player, ChatColor.RED + "[MobMastery] Version 1.1.1 " + ChatColor.BLUE + "by island219 & Blabba_Labba");
             }
             if ((args.length == 1)
                     && (args[0].equalsIgnoreCase("reload"))) {
@@ -105,7 +109,7 @@ public class MobDamage extends JavaPlugin {
                     }
                     if (this.getConfig().contains("MobMastery." + args[1] + ".Health")) {
                                 this.getConfig().set("MobMastery." + args[1] + ".Health", Integer.valueOf(args[2]));
-                                respond(player, ChatColor.RED + "[MobDamage] Damage value set.");
+                                respond(player, ChatColor.RED + "[MobMastery] Damage value set.");
                                 saveConfig();
                                 reloadConfig();
                     }
@@ -120,7 +124,7 @@ public class MobDamage extends JavaPlugin {
                     }
                     if (this.getConfig().contains("MobMastery." + args[1] + ".Damage")) {
                                 this.getConfig().set("MobMastery." + args[1] + ".Damage", Integer.valueOf(args[2]));
-                                respond(player, ChatColor.RED + "[MobDamage] Damage value set.");
+                                respond(player, ChatColor.RED + "[MobMastery] Damage value set.");
                                 saveConfig();
                                 reloadConfig();
                         if (args.length < 3) {
@@ -134,7 +138,7 @@ public class MobDamage extends JavaPlugin {
             return true;
         }
 
-        player.sendMessage(ChatColor.RED + "[MobDamage] Permission denied.");
+        player.sendMessage(ChatColor.RED + "[MobMastery] Permission denied.");
         return false;
     }
 
