@@ -84,7 +84,8 @@ public class MobDamage extends JavaPlugin {
         getConfig().addDefault("MobHealth.WitherSkeleton", Integer.valueOf(-1));
         getConfig().addDefault("MobHealth.ZombieVillager", Integer.valueOf(-1));
         getConfig().addDefault("MobHealth.IronGolem", Integer.valueOf(-1));
-
+        getConfig().addDefault("MobHealth.SnowGolem", Integer.valueOf(-1));
+        
         getConfig().addDefault("MobDamage.Pig", Integer.valueOf(-1));
         getConfig().addDefault("MobDamage.Cow", Integer.valueOf(-1));
         getConfig().addDefault("MobDamage.Spider", Integer.valueOf(-1));
@@ -111,7 +112,7 @@ public class MobDamage extends JavaPlugin {
         getConfig().addDefault("MobDamage.WitherSkeleton", Integer.valueOf(-1));
         getConfig().addDefault("MobDamage.ZombieVillager", Integer.valueOf(-1));
         getConfig().addDefault("MobDamage.IronGolem", Integer.valueOf(-1));
-
+        getConfig().addDefault("MobDamage.SnowGolem", Integer.valueOf(-1));
         getConfig().options().copyDefaults(true);
         saveConfig();
     }
@@ -125,7 +126,9 @@ public class MobDamage extends JavaPlugin {
         }
         if (((player == null) || (player.hasPermission("mobdamage.reload")))
                 && (commandLabel.equalsIgnoreCase("mobdamage"))) {
-            respond(player, ChatColor.RED + "[MobDamage] Version 1.0.");
+            if ((args.length == 0)) {
+                        respond(player, ChatColor.RED + "[MobDamage] Version 1.1 " + ChatColor.BLUE + "by island219 & Blabba_Labba");
+                    }
             if ((args.length == 1)
                     && (args[0].equalsIgnoreCase("reload"))) {
                 reloadConfig();
@@ -136,7 +139,7 @@ public class MobDamage extends JavaPlugin {
             return true;
         }
 
-        player.sendMessage(ChatColor.RED + "[] Permission denied.");
+        player.sendMessage(ChatColor.RED + "[MobDamage] Permission denied.");
         return false;
     }
     
